@@ -1,30 +1,30 @@
 import 'package:flutter/material.dart';
 
-// Breakpoints for different screen sizes
+/// Breakpoints for different screen sizes
 const _xlMinWidth = 1280;
 const _mdMinWidth = 768;
 const _smMinWidth = 640;
 
 class WebResponsiveScaffold extends StatelessWidget {
-  // Small layout widgets
+  /// Small layout widgets
   final Widget? smallLayoutWidget;
   final AppBar? smallLayoutAppBar;
   final Drawer? smallLayoutDrawer;
   final FloatingActionButton? smallLayoutFAB;
 
-  // Medium layout widgets
+  /// Medium layout widgets
   final Widget? mediumLayoutWidget;
   final AppBar? mediumLayoutAppBar;
   final Drawer? mediumLayoutDrawer;
   final FloatingActionButton? mediumLayoutFAB;
 
-  // Xlarge layout widgets
+  /// Xlarge layout widgets
   final Widget? xLargeLayoutWidget;
   final AppBar? xLargeLayoutAppBar;
   final Drawer? xLargeLayoutDrawer;
   final FloatingActionButton? xLargeLayoutFAB;
 
-  // ignore: prefer_const_constructors_in_immutables
+  /// ignore: prefer_const_constructors_in_immutables
   WebResponsiveScaffold({
     super.key,
     this.mediumLayoutWidget,
@@ -41,7 +41,7 @@ class WebResponsiveScaffold extends StatelessWidget {
     this.xLargeLayoutFAB,
   });
 
-// Rendering the appropriate layout widget for each screen size
+/// Rendering the appropriate layout widget for each screen size
   Widget _renderAppropriateLayout(BuildContext context) {
     if (ResponsiveScreen.isSmall(context) &&
         ResponsiveScreen.isXSmall(context)) {
@@ -55,7 +55,7 @@ class WebResponsiveScaffold extends StatelessWidget {
     }
   }
 
-// Rendering the appropriate appbar for each screen size
+/// Rendering the appropriate appbar for each screen size
   AppBar _renderAppropriateAppBar(BuildContext context) {
     if (ResponsiveScreen.isSmall(context) &&
         ResponsiveScreen.isXSmall(context)) {
@@ -85,7 +85,7 @@ class WebResponsiveScaffold extends StatelessWidget {
     }
   }
 
-// Rendering the appropriate drawer for each screen size
+/// Rendering the appropriate drawer for each screen size
   Drawer _renderAppropriateDrawer(BuildContext context) {
     if (ResponsiveScreen.isSmall(context) &&
         ResponsiveScreen.isXSmall(context)) {
@@ -123,7 +123,7 @@ class WebResponsiveScaffold extends StatelessWidget {
     }
   }
 
-// Rendering the appropriate floating action button for each screen size
+/// Rendering the appropriate floating action button for each screen size
   Widget _renderAppropriateFAB(BuildContext context) {
     if (ResponsiveScreen.isSmall(context) &&
         ResponsiveScreen.isXSmall(context)) {
@@ -174,7 +174,7 @@ class WebResponsiveScaffold extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Rendering different UI Elements depending on the screen size detected
+    /// Rendering different UI Elements depending on the screen size detected
     return Scaffold(
       appBar: _renderAppropriateAppBar(context),
       body: _renderAppropriateLayout(context),
@@ -185,13 +185,13 @@ class WebResponsiveScaffold extends StatelessWidget {
 }
 
 class WebResponsiveLayout extends StatelessWidget {
-  // Small layout widget
+  /// Small layout widget
   final Widget? smallLayoutWidget;
 
-  // Medium layout widget
+  /// Medium layout widget
   final Widget? mediumLayoutWidget;
 
-  // Xlarge layout widget
+  /// Xlarge layout widget
   final Widget? xLargeLayoutWidget;
 
   const WebResponsiveLayout({
@@ -201,7 +201,7 @@ class WebResponsiveLayout extends StatelessWidget {
     this.xLargeLayoutWidget,
   });
 
-// Rendering approrpiate layouts for respective screen sizes
+/// Rendering approrpiate layouts for respective screen sizes
   Widget _renderAppropriateLayout(BuildContext context) {
     if (ResponsiveScreen.isSmall(context) &&
         ResponsiveScreen.isXSmall(context)) {
@@ -241,30 +241,30 @@ class WebResponsiveLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Rendering appropriate layout for each screen size
+    /// Rendering appropriate layout for each screen size
     return _renderAppropriateLayout(context);
   }
 }
 
 class ResponsiveScreen {
-  // Check if the screen size is small
+  /// Check if the screen size is small
   static bool isSmall(BuildContext context) {
     return MediaQuery.of(context).size.width >= _smMinWidth &&
         MediaQuery.of(context).size.width < _mdMinWidth;
   }
 
-  // Check if the screen size is medium
+  /// Check if the screen size is medium
   static bool isMedium(BuildContext context) {
     return MediaQuery.of(context).size.width >= _mdMinWidth &&
         MediaQuery.of(context).size.width < _xlMinWidth;
   }
 
-  // Check if the screen size is xlarge
+  /// Check if the screen size is xlarge
   static bool isXLarge(BuildContext context) {
     return MediaQuery.of(context).size.width >= _xlMinWidth;
   }
 
-  // Check if the screen size is xsmall
+  /// Check if the screen size is xsmall
   static bool isXSmall(BuildContext context) {
     return MediaQuery.of(context).size.width < _smMinWidth;
   }
