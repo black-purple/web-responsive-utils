@@ -41,7 +41,7 @@ class WebResponsiveScaffold extends StatelessWidget {
     this.xLargeLayoutFAB,
   });
 
-/// Rendering the appropriate layout widget for each screen size
+  /// Rendering the appropriate layout widget for each screen size
   Widget _renderAppropriateLayout(BuildContext context) {
     if (ResponsiveScreen.isSmall(context) &&
         ResponsiveScreen.isXSmall(context)) {
@@ -55,7 +55,7 @@ class WebResponsiveScaffold extends StatelessWidget {
     }
   }
 
-/// Rendering the appropriate appbar for each screen size
+  /// Rendering the appropriate appbar for each screen size
   AppBar _renderAppropriateAppBar(BuildContext context) {
     if (ResponsiveScreen.isSmall(context) &&
         ResponsiveScreen.isXSmall(context)) {
@@ -85,7 +85,7 @@ class WebResponsiveScaffold extends StatelessWidget {
     }
   }
 
-/// Rendering the appropriate drawer for each screen size
+  /// Rendering the appropriate drawer for each screen size
   Drawer _renderAppropriateDrawer(BuildContext context) {
     if (ResponsiveScreen.isSmall(context) &&
         ResponsiveScreen.isXSmall(context)) {
@@ -123,7 +123,7 @@ class WebResponsiveScaffold extends StatelessWidget {
     }
   }
 
-/// Rendering the appropriate floating action button for each screen size
+  /// Rendering the appropriate floating action button for each screen size
   Widget _renderAppropriateFAB(BuildContext context) {
     if (ResponsiveScreen.isSmall(context) &&
         ResponsiveScreen.isXSmall(context)) {
@@ -201,7 +201,7 @@ class WebResponsiveLayout extends StatelessWidget {
     this.xLargeLayoutWidget,
   });
 
-/// Rendering approrpiate layouts for respective screen sizes
+  /// Rendering approrpiate layouts for respective screen sizes
   Widget _renderAppropriateLayout(BuildContext context) {
     if (ResponsiveScreen.isSmall(context) &&
         ResponsiveScreen.isXSmall(context)) {
