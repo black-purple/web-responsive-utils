@@ -25,7 +25,7 @@ class WebResponsiveScaffold extends StatelessWidget {
   final FloatingActionButton? xLargeLayoutFAB;
 
   // ignore: prefer_const_constructors_in_immutables
-  WebResponsiveScaffold({
+  WebResponsiveScaffold({super.key, 
     this.mediumLayoutWidget,
     this.smallLayoutWidget,
     this.xLargeLayoutWidget,

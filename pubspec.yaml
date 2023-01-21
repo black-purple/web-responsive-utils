@@ -1,10 +1,10 @@
-name: web_responsive_layout
+name: web_responsive_utils
 description: A new Flutter package project.
 version: 0.0.1
-homepage:
+homepage: https://github.com/black-purple/web-responsive-utils
 
 environment:
-  sdk: '>=3.0.0-76.0.dev <4.0.0'
+  sdk: '>=2.17.0 <4.0.0'
   flutter: ">=1.17.0"
 
 dependencies:
