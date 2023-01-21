@@ -25,7 +25,8 @@ class WebResponsiveScaffold extends StatelessWidget {
   final FloatingActionButton? xLargeLayoutFAB;
 
   // ignore: prefer_const_constructors_in_immutables
-  WebResponsiveScaffold({super.key, 
+  WebResponsiveScaffold({
+    super.key,
     this.mediumLayoutWidget,
     this.smallLayoutWidget,
     this.xLargeLayoutWidget,
@@ -40,6 +41,7 @@ class WebResponsiveScaffold extends StatelessWidget {
     this.xLargeLayoutFAB,
   });
 
+// Rendering the appropriate layout widget for each screen size
   Widget _renderAppropriateLayout(BuildContext context) {
     if (ResponsiveScreen.isSmall(context) &&
         ResponsiveScreen.isXSmall(context)) {
@@ -53,6 +55,7 @@ class WebResponsiveScaffold extends StatelessWidget {
     }
   }
 
+// Rendering the appropriate appbar for each screen size
   AppBar _renderAppropriateAppBar(BuildContext context) {
     if (ResponsiveScreen.isSmall(context) &&
         ResponsiveScreen.isXSmall(context)) {
@@ -82,6 +85,7 @@ class WebResponsiveScaffold extends StatelessWidget {
     }
   }
 
+// Rendering the appropriate drawer for each screen size
   Drawer _renderAppropriateDrawer(BuildContext context) {
     if (ResponsiveScreen.isSmall(context) &&
         ResponsiveScreen.isXSmall(context)) {
@@ -119,6 +123,7 @@ class WebResponsiveScaffold extends StatelessWidget {
     }
   }
 
+// Rendering the appropriate floating action button for each screen size
   Widget _renderAppropriateFAB(BuildContext context) {
     if (ResponsiveScreen.isSmall(context) &&
         ResponsiveScreen.isXSmall(context)) {
@@ -169,6 +174,7 @@ class WebResponsiveScaffold extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Rendering different UI Elements depending on the screen size detected
     return Scaffold(
       appBar: _renderAppropriateAppBar(context),
       body: _renderAppropriateLayout(context),
@@ -195,6 +201,7 @@ class WebResponsiveLayout extends StatelessWidget {
     this.xLargeLayoutWidget,
   });
 
+// Rendering approrpiate layouts for respective screen sizes
   Widget _renderAppropriateLayout(BuildContext context) {
     if (ResponsiveScreen.isSmall(context) &&
         ResponsiveScreen.isXSmall(context)) {
@@ -206,21 +213,24 @@ class WebResponsiveLayout extends StatelessWidget {
             ),
           );
     } else if (ResponsiveScreen.isMedium(context)) {
-      return mediumLayoutWidget ?? Center(
+      return mediumLayoutWidget ??
+          Center(
             child: Container(
               color: Colors.green,
               child: const Text("Small"),
             ),
           );
     } else if (ResponsiveScreen.isXLarge(context)) {
-      return xLargeLayoutWidget ?? Center(
+      return xLargeLayoutWidget ??
+          Center(
             child: Container(
               color: Colors.amber,
               child: const Text("Small"),
             ),
           );
     } else {
-      return smallLayoutWidget ?? Center(
+      return smallLayoutWidget ??
+          Center(
             child: Container(
               color: Colors.orange,
               child: const Text("Small"),
@@ -231,25 +241,30 @@ class WebResponsiveLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Rendering appropriate layout for each screen size
     return _renderAppropriateLayout(context);
   }
 }
 
 class ResponsiveScreen {
+  // Check if the screen size is small
   static bool isSmall(BuildContext context) {
     return MediaQuery.of(context).size.width >= _smMinWidth &&
         MediaQuery.of(context).size.width < _mdMinWidth;
   }
 
+  // Check if the screen size is medium
   static bool isMedium(BuildContext context) {
     return MediaQuery.of(context).size.width >= _mdMinWidth &&
         MediaQuery.of(context).size.width < _xlMinWidth;
   }
 
+  // Check if the screen size is xlarge
   static bool isXLarge(BuildContext context) {
     return MediaQuery.of(context).size.width >= _xlMinWidth;
   }
 
+  // Check if the screen size is xsmall
   static bool isXSmall(BuildContext context) {
     return MediaQuery.of(context).size.width < _smMinWidth;
   }
