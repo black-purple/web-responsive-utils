@@ -2,7 +2,7 @@
 
 A flutter package to help you develop for the web more intuitively and efficiently when it comes to responsive webapps.
 
-This package have ```two responsive widgets``` and ```one utility class``` that you can use to your liking.
+This package has ```two responsive widgets``` and ```one utility class``` that you can use to your liking.
 + Responsive Widgets:
   + ```WebResponsiveScaffold```
   + ```WebResponsiveLayout```
