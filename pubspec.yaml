@@ -1,5 +1,5 @@
 name: web_responsive_utils
-description: A new Flutter package project.
+description: A flutter package to help you develop for the web more intuitively and efficiently when it comes to responsive webapps.
 version: 0.0.1
 homepage: https://github.com/black-purple/web-responsive-utils
 
